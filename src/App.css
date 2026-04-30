@@ -1,0 +1,275 @@
+.pomodoro-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.pomodoro-card {
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.pomodoro-card:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* 模式切换 */
+.mode-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* 计时器 */
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.timer-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.timer-display {
+  text-align: center;
+  color: white;
+}
+
+.timer-label {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.timer-time {
+  font-size: 3.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* 控制按钮 */
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.control-btn {
+  flex: 1;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.reset-btn:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* 设置区域 */
+.settings {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.settings label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.settings input[type="range"] {
+  flex: 1;
+  height: 5px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.settings input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #667eea;
+  cursor: pointer;
+}
+
+.time-value {
+  min-width: 70px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+/* 统计面板 */
+.stats-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* 清除按钮 */
+.clear-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+/* 通知 */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  animation: slideIn 0.3s ease;
+  z-index: 1000;
+}
+
+.notification-success {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.notification-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+  .pomodoro-card {
+    padding: 25px;
+  }
+
+  .timer-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .timer-time {
+    font-size: 2.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+}
